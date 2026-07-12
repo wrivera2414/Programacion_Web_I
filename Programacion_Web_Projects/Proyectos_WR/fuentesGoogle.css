@@ -1,0 +1,14 @@
+/* Importando Fuentes de Google*/
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
+.piedra-regular {
+  font-family: "Piedra", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-size: 24pt;
+  background-color:chartreuse;
+  height: 50px;
+}

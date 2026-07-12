@@ -1,0 +1,131 @@
+
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Imagen de fondo fija que ocupa toda la pantalla */
+    background: url('../imagenes/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal para dar legibilidad al texto sobre el fondo */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.93); /* Fondo blanco con leve transparencia */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Títulos Grandes y Visibles */
+h1 {
+    font-size: 2.5rem;
+    color: #0f4c81;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #0f4c81;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #1d70b8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Menú de Navegación */
+nav {
+    background-color: #0f4c81;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #1d70b8;
+}
+
+/* Estilos para Tablas (Página de Productos) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Colorear la fila de títulos al gusto */
+th {
+    background-color: #0f4c81;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.img-producto {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos de Listas y Enlaces */
+ol, ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a.link-sugerido {
+    color: #1d70b8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.link-sugerido:hover {
+    text-decoration: underline;
+}
+
+/* Logo en la página principal */
+.logo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
