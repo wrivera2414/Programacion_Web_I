@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wencell Rivera - 201910010158</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; max-width: 400px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #28a745; color: white; border: none; cursor: pointer; width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 2: Área de un Triángulo</h2>
+    <form>
+        <div class="form-group">
+            <label>Base:</label>
+            <input type="number" id="base" step="any" min="0" required>
+        </div>
+        <div class="form-group">
+            <label>Altura:</label>
+            <input type="number" id="altura" step="any" min="0" required>
+        </div>
+        <button type="button" onclick="calcularArea()">Calcular Área</button>
+        <div class="form-group" style="margin-top: 15px;">
+            <label>Área resultante (cm²):</label>
+            <input type="number" id="area" readonly>
+        </div>
+    </form>
+
+    <script>
+        function calcularArea() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (isNaN(base) || isNaN(altura)) {
+                alert("Por favor ingrese la base y la altura.");
+                return;
+            }
+
+            const area = (base * altura) / 2;
+            document.getElementById('area').value = area.toFixed(2);
+        }
+    </script>
+</body>
+</html>

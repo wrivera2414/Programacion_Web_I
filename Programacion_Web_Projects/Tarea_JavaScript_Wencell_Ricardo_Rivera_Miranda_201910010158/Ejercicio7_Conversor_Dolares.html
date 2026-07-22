@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wencell Rivera - 201910010158</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; max-width: 400px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #20c997; color: white; border: none; cursor: pointer; width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 7: Conversor Dólares a Lempiras</h2>
+    <form>
+        <div class="form-group">
+            <label>Tasa de Cambio (Lps. por $1):</label>
+            <input type="number" id="tasa" step="any" min="0" placeholder="Ej: 24.50" required oninput="convertir()">
+        </div>
+        <div class="form-group">
+            <label>Monto en Dólares ($):</label>
+            <input type="number" id="dolares" step="any" min="0" placeholder="Ej: 50" required oninput="convertir()">
+        </div>
+        <button type="button" onclick="convertir()">Convertir</button>
+        <div class="form-group" style="margin-top: 15px;">
+            <label>Equivalente en Lempiras (Lps.):</label>
+            <input type="number" id="lempiras" readonly>
+        </div>
+    </form>
+
+    <script>
+        function convertir() {
+            const tasa = parseFloat(document.getElementById('tasa').value);
+            const dolares = parseFloat(document.getElementById('dolares').value);
+
+            if (!isNaN(tasa) && !isNaN(dolares)) {
+                const lempiras = tasa * dolares;
+                document.getElementById('lempiras').value = lempiras.toFixed(2);
+            } else {
+                document.getElementById('lempiras').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

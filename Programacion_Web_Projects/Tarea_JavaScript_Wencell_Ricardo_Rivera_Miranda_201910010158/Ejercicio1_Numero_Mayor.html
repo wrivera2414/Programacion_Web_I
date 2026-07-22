@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wencell Rivera - 201910010158</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; max-width: 400px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; width: 100%; margin-top: 10px; }
+        button:hover { background-color: #0056b3; }
+    </style>    
+</head>
+<body>
+    <h2>Ejercicio 1: Mayor de 4 números</h2>
+    <form id="formMayor">
+        <div class="form-group">
+            <label>Número 1:</label>
+            <input type="number" id="num1" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Número 2:</label>
+            <input type="number" id="num2" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Número 3:</label>
+            <input type="number" id="num3" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Número 4:</label>
+            <input type="number" id="num4" step="any" required>
+        </div>
+        <button type="button" onclick="calcularMayor()">Calcular Mayor</button>
+        <div class="form-group" style="margin-top: 15px;">
+            <label>El número mayor es:</label>
+            <input type="number" id="resultado" readonly>
+        </div>
+    </form>
+
+    <script>
+        function calcularMayor() {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+            const n3 = parseFloat(document.getElementById('num3').value);
+            const n4 = parseFloat(document.getElementById('num4').value);
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4)) {
+                alert("Por favor complete todos los campos.");
+                return;
+            }
+
+            const mayor = Math.max(n1, n2, n3, n4);
+            document.getElementById('resultado').value = mayor;
+        }
+    </script>
+</body>
+</html>

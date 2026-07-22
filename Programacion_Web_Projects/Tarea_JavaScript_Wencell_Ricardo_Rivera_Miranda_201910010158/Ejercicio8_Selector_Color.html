@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wencell Rivera - 201910010158</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            transition: background-color 0.3s ease; 
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 350px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        label { display: block; margin-bottom: 10px; font-weight: bold; }
+        input[type="color"] { width: 100%; height: 50px; cursor: pointer; border: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Ejercicio 8: Cambiar Color de Fondo</h2>
+        <form>
+            <label for="colorPicker">Seleccione un color:</label>
+            <input type="color" id="colorPicker" value="#ffffff" onchange="cambiarFondo()" oninput="cambiarFondo()">
+        </form>
+    </div>
+
+    <script>
+        function cambiarFondo() {
+            const colorSeleccionado = document.getElementById('colorPicker').value;
+            document.body.style.backgroundColor = colorSeleccionado;
+        }
+    </script>
+</body>
+</html>

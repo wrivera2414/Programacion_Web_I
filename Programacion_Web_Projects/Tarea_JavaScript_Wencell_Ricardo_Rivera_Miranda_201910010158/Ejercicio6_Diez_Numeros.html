@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Wencell Rivera - 201910010158</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; max-width: 500px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .form-group { margin-bottom: 10px; }
+        label { display: block; font-size: 14px; }
+        input { width: 100%; padding: 6px; box-sizing: border-box; }
+        button { padding: 10px; background-color: #fd7e14; color: white; border: none; cursor: pointer; width: 100%; margin-top: 15px; font-size: 16px; }
+        #resultados { margin-top: 20px; padding: 15px; border: 1px solid #ccc; background-color: #f8f9fa; border-radius: 5px; }
+        #resultados p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 6: Análisis de 10 Números</h2>
+    <form id="formDiez">
+        <div class="grid">
+            <div class="form-group"><label>Número 1:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 2:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 3:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 4:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 5:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 6:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 7:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 8:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 9:</label><input type="number" class="num-input" step="any" required></div>
+            <div class="form-group"><label>Número 10:</label><input type="number" class="num-input" step="any" required></div>
+        </div>
+        <button type="button" onclick="analizarNumeros()">Procesar Datos</button>
+    </form>
+
+    <div id="resultados" style="display:none;">
+        <h3>Resultados:</h3>
+        <p><strong>Número Mayor:</strong> <span id="resMayor"></span></p>
+        <p><strong>Número Menor:</strong> <span id="resMenor"></span></p>
+        <p><strong>Suma Total:</strong> <span id="resSuma"></span></p>
+        <p><strong>Promedio:</strong> <span id="resPromedio"></span></p>
+    </div>
+
+    <script>
+        function analizarNumeros() {
+            const inputs = document.querySelectorAll('.num-input');
+            const numeros = [];
+
+            for (let i = 0; i < inputs.length; i++) {
+                const val = parseFloat(inputs[i].value);
+                if (isNaN(val)) {
+                    alert("Por favor ingrese los 10 números completos.");
+                    return;
+                }
+                numeros.push(val);
+            }
+
+            const mayor = Math.max(...numeros);
+            const menor = Math.min(...numeros);
+            const suma = numeros.reduce((acc, curr) => acc + curr, 0);
+            const promedio = suma / numeros.length;
+
+            document.getElementById('resMayor').textContent = mayor;
+            document.getElementById('resMenor').textContent = menor;
+            document.getElementById('resSuma').textContent = suma;
+            document.getElementById('resPromedio').textContent = promedio.toFixed(2);
+            
+            document.getElementById('resultados').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
